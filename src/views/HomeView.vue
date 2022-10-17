@@ -1,7 +1,7 @@
 <template>
-  <div>
-  </div>
+  <NewsList/>
 </template>
 
-<script>
+<script setup>
+import NewsList from '@/components/organisms/NewsList.vue';
 </script>
