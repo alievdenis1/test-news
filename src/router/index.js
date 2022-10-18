@@ -1,7 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import MainLayout from '@/components/layouts/MainLayout.vue';
-import HomeView from '@/views/HomeView.vue';
-import DetailedNewsView from '@/views/DetailedNewsView.vue';
 
 const routes = [
   {
@@ -10,12 +8,12 @@ const routes = [
     component: MainLayout,
     children: [
       {
-        component: HomeView,
+        component: import(/* webpackChunkName: "home-pag" */ '@/views/HomeView.vue'),
         name: 'home-page',
         path: '/',
       },
       {
-        component: DetailedNewsView,
+        component: import(/* webpackChunkName: "detailed-news" */ '@/views/DetailedNewsView.vue'),
         name: 'detailed-news',
         path: '/news/:id',
       },
