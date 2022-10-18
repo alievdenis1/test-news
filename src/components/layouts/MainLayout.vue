@@ -4,7 +4,7 @@
       <span class="mx-5 text-xl">Новости</span>
     </a>
   </div>
-  <div class="flex h-full overflow-auto">
+  <div class="flex w-full h-full overflow-auto">
     <router-view/>
   </div>
 </template>
