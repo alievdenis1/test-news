@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://codenotcompleted.com/api/v1/';
 const NEWS_LIST_METHOD = 'news';
+const DETAILED_NEW_METHOD = 'news';
 
 const request = async (method, params = {}) => {
   const config = { params };
@@ -13,7 +14,12 @@ const request = async (method, params = {}) => {
 };
 
 export default {
-  getNews() {
-    return request(NEWS_LIST_METHOD, { numberPage: 1 });
+  getNews(numberPage = 1, count = 20, filters = {}) {
+    return request(NEWS_LIST_METHOD, {
+      numberPage, count, filters,
+    });
+  },
+  getDetailedNew(id) {
+    return request(`${DETAILED_NEW_METHOD}/${id}`);
   },
 };
