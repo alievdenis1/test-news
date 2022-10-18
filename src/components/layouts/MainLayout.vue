@@ -6,7 +6,3 @@
     <router-view/>
   </div>
 </template>
-
-<script setup>
-
-</script>

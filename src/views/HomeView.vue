@@ -6,6 +6,8 @@
 </template>
 
 <script setup>
-import NewsList from '@/components/organisms/NewsList.vue';
-import FavoritesNews from '@/components/organisms/FavoritesNews.vue';
+import { defineAsyncComponent } from 'vue';
+
+const FavoritesNews = defineAsyncComponent(() => import('@/components/organisms/FavoritesNews.vue'));
+const NewsList = defineAsyncComponent(() => import('@/components/organisms/NewsList.vue'));
 </script>
