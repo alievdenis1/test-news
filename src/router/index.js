@@ -1,16 +1,23 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import MainLayout from '@/components/layouts/MainLayout.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue'),
+    name: 'layout',
+    component: MainLayout,
+    children: [
+      {
+        component: import(/* webpackChunkName: "home-pag" */ '@/views/HomeView.vue'),
+        name: 'home-page',
+        path: '/',
+      },
+      {
+        component: import(/* webpackChunkName: "detailed-news" */ '@/views/DetailedNewsView.vue'),
+        name: 'detailed-news',
+        path: '/news/:id',
+      },
+    ],
   },
 ];
 
